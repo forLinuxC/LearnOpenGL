@@ -46,3 +46,21 @@ cmake -G Xcode ..
 Polytonic created a project called [Glitter](https://github.com/Polytonic/Glitter) that is a dead-simple boilerplate for OpenGL. 
 Everything you need to run a single LearnOpenGL Project (including all libraries) and just that; nothing more. 
 Perfect if you want to follow along with the chapters, without the hassle of having to manually compile and link all third party libraries!
+
+
+
+
+git clone https://github.com/Dav1dde/glad.git
+
+cd glad
+git checkout c
+gcc -fpic src/glad.c -c
+gcc -shared -Wl,-z,relro,-z,now -o libglad.so glad.o
+sudo cp libglad.so /usr/lib/
+sudo cp include/* -r /usr/include
+
+
+udo apt-get install build-essential
+sudo apt-get install libglfw3-dev
+sudo apt-get install cmake xorg-dev 
+sudo apt-get install libgl1-mesa-dev
