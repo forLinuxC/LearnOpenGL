@@ -54,7 +54,7 @@ git clone https://github.com/Dav1dde/glad.git
 
 cd glad
 git checkout c
-gcc -fpic src/glad.c -c
+gcc -fpic src/glad.c -c -I ./include
 gcc -shared -Wl,-z,relro,-z,now -o libglad.so glad.o
 sudo cp libglad.so /usr/lib/
 sudo cp include/* -r /usr/include
@@ -64,3 +64,9 @@ udo apt-get install build-essential
 sudo apt-get install libglfw3-dev
 sudo apt-get install cmake xorg-dev 
 sudo apt-get install libgl1-mesa-dev
+
+sudo apt-get install ocaml-findlib
+
+git clone https://github.com/nothings/stb.git
+sudo cp stb/stb_image.h /usr/local/include/
+
